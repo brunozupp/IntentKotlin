@@ -35,6 +35,7 @@
         app:layout_constraintStart_toEndOf="parent"/>
 
     <LinearLayout
+        android:id="@+id/buttonsRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -49,7 +50,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <View android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="1dp"
             android:layout_weight="1" />
 
         <Button
@@ -61,5 +62,14 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnGoToVisualizeInformationClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visualizar Informações Classe"
+        app:layout_constraintTop_toBottomOf="@+id/buttonsRow"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

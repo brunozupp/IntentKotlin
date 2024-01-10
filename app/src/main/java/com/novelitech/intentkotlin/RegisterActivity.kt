@@ -33,5 +33,23 @@ class RegisterActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+        binding.btnGoToVisualizeInformationClass.setOnClickListener {
+
+            val name = binding.etName.text.toString()
+            val age = binding.etAge.text.toString().toInt()
+            val country = binding.etCountry.text.toString()
+
+            val person = Person(
+                name = name,
+                age = age,
+                country = country,
+            )
+
+            Intent(this, VisualizationRegisterClassActivity::class.java).also {
+                it.putExtra("EXTRA_PERSON", person)
+                startActivity(it)
+            }
+        }
     }
 }
