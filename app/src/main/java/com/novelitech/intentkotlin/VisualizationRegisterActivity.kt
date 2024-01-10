@@ -14,10 +14,18 @@ class VisualizationRegisterActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        goBack()
+
+        fetchData()
+    }
+
+    private fun goBack() {
         binding.btnGoToVisualizeInformation.setOnClickListener {
             finish()
         }
+    }
 
+    private fun fetchData() {
         val name = intent.getStringExtra("EXTRA_NAME")
         val age = intent.getIntExtra("EXTRA_AGE", 0)
         val country = intent.getStringExtra("EXTRA_COUNTRY")

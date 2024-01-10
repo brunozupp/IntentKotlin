@@ -17,10 +17,18 @@ class VisualizationRegisterClassActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        goBack()
+
+        fetchData()
+    }
+
+    private fun goBack() {
         binding.btnGoToVisualizeInformation.setOnClickListener {
             finish()
         }
+    }
 
+    private fun fetchData() {
         // getSerializableExtra está depreciado a partir do SDK versão 33
         // Por essa questão getSerializable foi criado para chamar o método de acordo com o nível do SDK
         // val person = intent.getSerializableExtra("EXTRA_PERSON") as Person
@@ -32,8 +40,7 @@ class VisualizationRegisterClassActivity : AppCompatActivity() {
         binding.etCountry.text = "Country: ${person.country}"
     }
 
-    fun <T : Serializable?> getSerializable(activity: AppCompatActivity, name: String, clazz: Class<T>): T
-    {
+    fun <T : Serializable?> getSerializable(activity: AppCompatActivity, name: String, clazz: Class<T>): T {
         return if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
             activity.intent.getSerializableExtra(name, clazz)!!
         else

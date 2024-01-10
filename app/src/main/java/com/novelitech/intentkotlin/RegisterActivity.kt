@@ -16,10 +16,20 @@ class RegisterActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        goBack()
+
+        goToVisualizationRegister()
+
+        goToVisualizationRegisterClass()
+    }
+
+    private fun goBack() {
         binding.btnGoBack.setOnClickListener {
             finish()
         }
+    }
 
+    private fun goToVisualizationRegister() {
         binding.btnGoToVisualizeInformation.setOnClickListener {
 
             val name = binding.etName.text.toString()
@@ -33,7 +43,9 @@ class RegisterActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+    }
 
+    private fun goToVisualizationRegisterClass() {
         binding.btnGoToVisualizeInformationClass.setOnClickListener {
 
             val name = binding.etName.text.toString()
